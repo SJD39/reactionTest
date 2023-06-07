@@ -1,0 +1,19 @@
+* {
+    user-select: none;
+    margin: 0;
+    padding: 0;
+}
+.content{
+    margin: 0 auto;
+    max-width: 550px;
+    padding: 20px;
+}
+.score{
+    font-size: 24px;
+}
+.explain{
+    font-size: 18px;
+}
+.explain,.score,h1{
+    padding: 5px;
+}

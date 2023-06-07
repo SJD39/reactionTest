@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./reaction.css">
+    <title>测试你的反应速度</title>
+</head>
+
+<body>
+    <div class="content">
+        <h1>测试你的反应速度</h1>
+        <p class="score">成绩：<span id="scoreV">0000</span>ms</p>
+        <p class="explain">按住屏幕（键盘）开始，当背景颜色变红的时候松开屏幕（键盘）。</p>
+    </div>
+</body>
+<script>
+    var body = document.getElementsByTagName('body')[0];
+    var scoreV = document.getElementById('scoreV');
+    var startTime = 0;
+    var endTime;
+    var TimeID;
+    body.style.backgroundColor = "rgb(255, 255, 255)";
+
+    window.onkeydown = function () {
+        if (body.style.backgroundColor != "rgb(255, 255, 255)") {
+            return;
+        }
+        gameStart();
+    }
+    window.ontouchstart = function () {
+        if (body.style.backgroundColor != "rgb(255, 255, 255)") {
+            return;
+        }
+        gameStart();
+    }
+    window.onkeyup = function () {
+        gameEnd();
+    }
+    window.ontouchend = function () {
+        gameEnd();
+    }
+
+    function gameStart() {
+        body.style.backgroundColor = "#39c5bb";
+        
+        TimeID = setTimeout(() => {
+            body.style.backgroundColor = "#FFC0CB";
+            startTime = new Date().getTime();
+        }, 3000 + (Math.random() * 4000));
+    }
+
+    function gameEnd() {
+        if(startTime == 0){
+            clearTimeout(TimeID);
+            alert("预知未来的力量？");
+        }else{
+            endTime = new Date().getTime();
+            scoreV.innerText = endTime - startTime;
+        }
+        startTime = 0;
+        endTime = 0;
+        body.style.backgroundColor = "rgb(255, 255, 255)";
+    }
+</script>
+</html>
