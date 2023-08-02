@@ -25,9 +25,9 @@ if (isTouchDevice) {
 function initialize() {
     startTime = 0;
     body.style.backgroundColor = "#66ccff";
-    score_span.style.color = '#faafbe';
+    score_span.style.color = '#a0ee00';
     score_span.innerText = "按下";
-    explain.style.color = '#faafbe';
+    explain.style.color = '#a0ee00';
     explain.innerText = "按下屏幕/键盘/鼠标开始测试";
 }
 initialize();
@@ -50,9 +50,9 @@ function gameStart() {
     initialize();
 
     body.style.backgroundColor = "#FAAFBE";
-    score_span.style.color = '#66ccff';
+    score_span.style.color = '#a0ee00';
     score_span.innerText = "准备";
-    explain.style.color = '#66ccff';
+    explain.style.color = '#a0ee00';
     explain.innerText = "准备松开屏幕/键盘/鼠标";
 
     let delayTime = 3000 + (Math.random() * 2000);
