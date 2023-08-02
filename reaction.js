@@ -65,6 +65,7 @@ function waitUser() {
     gameState = 2;
 
     body.style.backgroundColor = "#dd4444";
+    explain.innerText = "松开！";
 
     startTime = new Date().getTime();
     TimerAnim();
@@ -78,7 +79,7 @@ function gameEnd() {
     if (gameState == 1) {
         clearTimeout(TimerID);
         score_span.innerText = "提前";
-        explain.innerText = "预知未来的能力？按下鼠标/键盘/屏幕重新开始";
+        explain.innerText = "活在未来？按下鼠标/键盘/屏幕重新开始";
         gameState = 0;
     } else if (gameState == 2) {
         gameState = 3;
